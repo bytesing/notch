@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.TextView
 //import com.bytesing.andart.notch.NotchCompat
 import com.kugou.shortvideoapp.R
+import inc.bytesing.libnotch.BSNotchCompat
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -16,12 +17,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mTv = findViewById(R.id.text)
-//        val hashNotch = NotchCompat.hasNotch(this)
-//        val notchHeight = NotchCompat.getNotchHeight(this)
-//        val notchSize = NotchCompat.getNotchSize(this)
+        val hashNotch = BSNotchCompat.hasNotch(this)
+        val notchHeight = BSNotchCompat.getNotchHeight(this)
+        val notchSize = BSNotchCompat.getNotchSize(this)
 
-//        val msg = " hashNotch=$hashNotch,notchHeight=$notchHeight,notchSize="+ notchSize.contentToString()
-//        mTv.text = msg
-//        Log.e(TAG, msg)
+
+        val msg = " hashNotch=$hashNotch,notchHeight=$notchHeight,notchSize="+ notchSize.contentToString()
+        mTv.text = msg
+        Log.e(TAG, msg)
+        BSNotchCompat.setDisplayInNotch(this)
     }
 }

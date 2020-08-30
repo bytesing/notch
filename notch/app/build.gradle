@@ -39,5 +39,6 @@ dependencies {
     implementation bs_depLib.androidx_ktx_core
     implementation bs_depLib.androidx_appcompat
     implementation bs_depLib.androidx_constraintlayout
+    implementation project(path: ':libNotch')
 
 }
